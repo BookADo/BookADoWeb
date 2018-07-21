@@ -20,7 +20,7 @@ if (inDev) {
     .then(() =>  console.log('connection successful'))
     .catch((err) => console.error(err));
 }
-
+ 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
