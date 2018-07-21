@@ -9,7 +9,7 @@ const app = express();
 
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/bookadoweb', { useMongoClient: true, promiseLibrary: require('bluebird') })
+mongoose.connect('mongodb://bookado.herokupapp.com', { useMongoClient: true, promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 
