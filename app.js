@@ -9,9 +9,17 @@ const app = express();
 
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://web-app:admin1234@ds147411.mlab.com:47411/bookado', { useMongoClient: true, promiseLibrary: require('bluebird') })
-  .then(() =>  console.log('connection successful'))
-  .catch((err) => console.error(err));
+
+const inDev = false;
+if (inDev) {
+  mongoose.connect('mongodb://localhost/bookadoweb', { useMongoClient: true, promiseLibrary: require('bluebird') })
+    .then(() =>  console.log('connection successful'))
+    .catch((err) => console.error(err));
+} else {
+  mongoose.connect('mongodb://web-app:admin1234@ds147411.mlab.com:47411/bookado', { useMongoClient: true, promiseLibrary: require('bluebird') })
+    .then(() =>  console.log('connection successful'))
+    .catch((err) => console.error(err));
+}
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
