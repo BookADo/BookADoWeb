@@ -19,4 +19,12 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+// temp api to save team member
+router.post('/', function(req, res, next) {
+  Team.create(req.body, function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+  });
+});
+
 module.exports = router;
