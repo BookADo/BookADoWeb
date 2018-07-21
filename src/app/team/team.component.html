@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Meet the Team</h1>
+  <div *ngFor="let member of members">
+    <h2>{{ member.name }}</h2>
+    <h5>{{ member.headline }}</h5>
+    <a href="{{ member.social.github }}">GitHub</a>
+    <p>{{ member.about }}</p>
+  </div>
+</div>
