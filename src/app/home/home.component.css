@@ -63,6 +63,7 @@
 }
 
 .login-button {
+  background-color: rgb(212,212,212);
   transition: background-color ease 0.25s;
 }
 .login-button:hover {
