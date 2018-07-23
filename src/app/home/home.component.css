@@ -1,4 +1,3 @@
-body,
 .blur-box::before {
   background: url('/assets/img/barbershop.jpg') 0 / cover fixed;
 }
