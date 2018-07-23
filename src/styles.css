@@ -9,5 +9,10 @@ body {
   background: #efefef;
 }
 .home-container-background {
-  background: url('/assets/img/barbershop.jpg') 0 / cover fixed;
+  background: url('/assets/img/barbershop.jpg') top center / cover fixed;
+}
+@media only screen and (max-width: 600px) {
+  .home-container-background {
+    background: url('/assets/img/barbershop-sm.jpg') top center / cover fixed;
+  }
 }
