@@ -35,11 +35,11 @@
   margin: 10px 0px;
 }
 .input {
-  background-color: rgba(0,0,0,0%);
+  background-color: rgba(0,0,0,0.0);
   color: white !important;
 }
 .input:focus {
-  background-color: rgba(0,0,0,10%);
+  background-color: rgba(0,0,0,0.1);
 }
 
 .input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -53,13 +53,13 @@
     color: #aaaaaa !important;
 }
 .signup-button {
-  background-color: rgba(0,0,0,0%);
+  background-color: rgba(0,0,0,0.0);
   border: 1px solid white;
   color: white;
   transition: background-color ease 0.25s;
 }
 .signup-button:hover {
-  background-color: rgba(0,0,0,10%);
+  background-color: rgba(0,0,0,0.1);
 }
 
 .login-button {
