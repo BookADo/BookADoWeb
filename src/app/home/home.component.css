@@ -1,5 +1,10 @@
 .blur-box::before {
-  background: url('/assets/img/barbershop.jpg') 0 / cover fixed;
+  background: url('/assets/img/barbershop.jpg') top center / cover fixed;
+}
+@media only screen and (max-width: 600px) {
+  .blur-box::before {
+    background: url('/assets/img/barbershop.jpg') top center / cover fixed;
+  }
 }
 
 .blur-box {
@@ -30,11 +35,11 @@
   margin: 10px 0px;
 }
 .input {
-  background-color: rgba(0,0,0,0%);
+  background-color: rgba(0,0,0,0.0);
   color: white !important;
 }
 .input:focus {
-  background-color: rgba(0,0,0,10%);
+  background-color: rgba(0,0,0,0.1);
 }
 
 .input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -48,16 +53,17 @@
     color: #aaaaaa !important;
 }
 .signup-button {
-  background-color: rgba(0,0,0,0%);
+  background-color: rgba(0,0,0,0.0);
   border: 1px solid white;
   color: white;
   transition: background-color ease 0.25s;
 }
 .signup-button:hover {
-  background-color: rgba(0,0,0,10%);
+  background-color: rgba(0,0,0,0.1);
 }
 
 .login-button {
+  background-color: rgb(212,212,212);
   transition: background-color ease 0.25s;
 }
 .login-button:hover {
