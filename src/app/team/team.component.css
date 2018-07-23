@@ -16,10 +16,10 @@ p {
 
 .team-block {
   background: #fafafa; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#e3e3e3, #ffffff, #e3e3e3); /* Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#e3e3e3, #ffffff, #e3e3e3); /* For Opera 11.6 to 12.0 */
-  background: -moz-linear-gradient(#e3e3e3, #ffffff, #e3e3e3); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#e3e3e3, #ffffff, #e3e3e3); /* Standard syntax */
+  background: -webkit-linear-gradient(#e3e3e3, #fafafa, #e3e3e3); /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#e3e3e3, #fafafa, #e3e3e3); /* For Opera 11.6 to 12.0 */
+  background: -moz-linear-gradient(#e3e3e3, #fafafa, #e3e3e3); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#e3e3e3, #fafafa, #e3e3e3); /* Standard syntax */
   border-radius: 4px;
   margin: 10px 0px;
   padding: 5px;
