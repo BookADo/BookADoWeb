@@ -3,6 +3,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const team = require('./routes/team');
 const app = express();
@@ -10,17 +11,16 @@ const app = express();
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-const inDev = false;
-if (inDev) {
+if (process.env.ENV=='dev') {
   mongoose.connect('mongodb://localhost/bookadoweb', { useMongoClient: true, promiseLibrary: require('bluebird') })
-    .then(() =>  console.log('connection successful'))
+    .then(() =>  console.log('local connection successful'))
     .catch((err) => console.error(err));
-} else {
-  mongoose.connect('mongodb://web-app:admin1234@ds147411.mlab.com:47411/bookado', { useMongoClient: true, promiseLibrary: require('bluebird') })
-    .then(() =>  console.log('connection successful'))
+} else if (process.env.ENV=='prod'){
+  mongoose.connect('mongodb://'+process.env.DB_USER+':'+process.env.DB_PASSWORD+'@ds147411.mlab.com:47411/bookado', { useMongoClient: true, promiseLibrary: require('bluebird') })
+    .then(() =>  console.log('prod connection successful'))
     .catch((err) => console.error(err));
 }
- 
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
