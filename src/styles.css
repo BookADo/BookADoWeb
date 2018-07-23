@@ -1,8 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-html,body{
+html, body{
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+}
+body {
   background: #efefef;
+}
+.home-container-background {
+  background: url('/assets/img/barbershop.jpg') 0 / cover fixed;
 }
