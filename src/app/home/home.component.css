@@ -42,10 +42,10 @@ body,
     opacity: 1; /* Firefox */
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: aaaaaa !important;
+    color: #aaaaaa !important;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-    color: aaaaaa !important;
+    color: #aaaaaa !important;
 }
 .signup-button {
   background-color: rgba(0,0,0,0%);
@@ -64,10 +64,10 @@ body,
   background-color: rgb(180,180,180);
 }
 a {
-  color: #333;
+  color: #333333;
   font-size: 12px;
   display: block;
 }
 a:hover {
-  color: #ccc;
+  color: #cccccc;
 }
