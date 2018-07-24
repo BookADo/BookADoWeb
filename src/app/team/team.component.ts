@@ -10,12 +10,14 @@ export class TeamComponent implements OnInit {
 
   members: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+  }
 
   ngOnInit() {
     this.http.get('/getTeam').subscribe(data => {
-    this.members = data;
-  });
+      this.members = data;
+    });
   }
 
 }
