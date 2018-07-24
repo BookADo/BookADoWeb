@@ -27,10 +27,13 @@ p {
   border: 1px solid #aaaaaa;
 }
 
-.fab {
+.fab, .fas {
   -webkit-transition: color 0.25s;
   transition: color 0.25s;
   margin: 0 2px;
+}
+.fa-envelope-square:hover {
+  color: #6e5494;
 }
 .fa-github-square:hover {
   color: #6e5494;
