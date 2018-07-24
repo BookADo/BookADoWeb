@@ -25,8 +25,11 @@
     "core-js": "^2.5.4",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.4",
     "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "rxjs": "^6.0.0",
     "serve-favicon": "^2.5.0",
     "zone.js": "^0.8.26"

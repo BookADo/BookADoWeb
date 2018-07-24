@@ -3,31 +3,33 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-require('dotenv').config();
-
-const team = require('./routes/team');
+const passport = require('passport');
 const app = express();
 
-const mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
 
-if (process.env.ENV=='dev') {
-  mongoose.connect('mongodb://localhost/bookadoweb', { useMongoClient: true, promiseLibrary: require('bluebird') })
-    .then(() =>  console.log('local connection successful'))
-    .catch((err) => console.error(err));
-} else if (process.env.ENV=='prod'){
-  mongoose.connect('mongodb://'+process.env.DB_USER+':'+process.env.DB_PASSWORD+'@ds147411.mlab.com:47411/bookado', { useMongoClient: true, promiseLibrary: require('bluebird') })
-    .then(() =>  console.log('prod connection successful'))
-    .catch((err) => console.error(err));
-}
+
+// [SH] Bring in the data model
+require('./api/models/db');
+require('./api/config/passport');
+const team = require('./api/routes/team');
+
+// [SH] Bring in the routes for the API (delete the default routes)
+const routesApi = require('./api/routes/index');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 
 app.use('/getTeam', team);
+app.use(passport.initialize());
+// [SH] Use the API routes when path starts with /api
+app.use('/api', routesApi);
 app.use('/', express.static(path.join(__dirname, 'dist/bookadoweb/')));
 app.use('*', express.static(path.join(__dirname, 'dist/bookadoweb/')));
+
+// [SH] Initialise Passport before using the route middleware
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

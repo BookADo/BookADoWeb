@@ -9,6 +9,7 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { HomeComponent } from './home/home.component';
 import { TeamComponent } from './team/team.component';
 import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
   {
@@ -27,6 +28,10 @@ const appRoutes: Routes = [
     path: 'team',
     component: TeamComponent
   },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
 ];
 
 
@@ -36,7 +41,8 @@ const appRoutes: Routes = [
     TeamComponent,
     AppNavbarComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
