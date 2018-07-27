@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService, UserDetails } from '../authentication.service';
 
@@ -22,5 +22,6 @@ export class ProfileComponent implements OnInit {
     },(err) => {
       console.error(err);
     });
+    console.log("End on Init");
   }
 }
