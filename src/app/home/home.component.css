@@ -5,6 +5,9 @@
   .blur-box::before {
     background: url('/assets/img/barbershop.jpg') top center / cover fixed;
   }
+  .blur-box {
+    width: 90%;
+  }
 }
 
 .blur-box {

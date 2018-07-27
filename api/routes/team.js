@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const Team = require('../models/Team.js');
-
+ 
 // Get all team members
 router.get('/', function(req, res, next) {
   Team.find(function (err, members) {

@@ -9,6 +9,7 @@
         <div class="col-xs-8">
           <h2>{{ member.name }}</h2>
           <h6>{{ member.headline }}</h6>
+          <a *ngIf="member.email" href="mailto:{{ member.email }}"><i class="fas fa-2x fa-envelope-square"></i></a>
           <a *ngIf="member.social.github" href="{{ member.social.github }}"><i class="fab fa-2x fa-github-square"></i></a>
           <a *ngIf="member.social.facebook" href="{{ member.social.facebook }}"><i class="fab fa-2x fa-facebook"></i></a>
           <a *ngIf="member.social.linkedin" href="{{ member.social.linkedin }}"><i class="fab fa-2x fa-linkedin"></i></a>
