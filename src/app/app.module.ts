@@ -3,13 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-
+//components
 import { AppComponent } from './app.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 import { TeamComponent } from './team/team.component';
 import { AboutComponent } from './about/about.component';
 import { ProfileComponent } from './profile/profile.component';
+//services
+import { AuthenticationService } from './authentication.service';
+import { AuthGuardService } from './auth-guard.service';
+
 
 const appRoutes: Routes = [
   {
@@ -30,7 +35,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
 ];
 
@@ -42,7 +52,8 @@ const appRoutes: Routes = [
     AppNavbarComponent,
     HomeComponent,
     AboutComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +64,10 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

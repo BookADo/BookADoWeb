@@ -18,8 +18,14 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="profile">Profile</a>
+      <li *ngIf="!auth.isLoggedIn()">
+        <a routerLink="">Sign in</a>
+      </li>
+      <li *ngIf="auth.isLoggedIn()">
+        <a class="nav-link" routerLink="/profile">{{ auth.getUserDetails()?.name }}</a>
+      </li>
+      <li *ngIf="auth.isLoggedIn()">
+        <a class="nav-link" (click)="auth.logout()">Logout</a>
       </li>
     </ul>
   </div>

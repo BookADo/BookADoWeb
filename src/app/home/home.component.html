@@ -1,13 +1,26 @@
-<div class="blur-box">
-    <input class="form-control input margin-10" placeholder="Email" type="email">
-    <input class="form-control input margin-10" placeholder="Password" type="password">
-  <a href="#">Trouble logging in?</a>
-  <div class="row">
-    <div class="col-sm-6">
-      <button class="btn margin-10 signup-button" style="width:100%">Sign Up</button>
-    </div>
-    <div class="col-sm-6">
-      <button class="btn margin-10 login-button" style="width:100%">Login</button>
-    </div>
+<div class="container" *ngIf="!auth.isLoggedIn()">
+  <div class="blur-box">
+    <form (submit)="login()">
+      <div class="form-group">
+        <input  name="email" class="form-control input margin-10" placeholder="Email" type="email"
+        [(ngModel)]="credentials.email">
+        <input name="password" class="form-control input margin-10" placeholder="Password" type="password"
+         [(ngModel)]="credentials.password">
+      </div>
+      <a href="#">Trouble logging in?</a>
+      <div class="row">
+        <div class="col-sm-6">
+          <button class="btn margin-10 signup-button" style="width:100%" routerLink="register">Sign Up</button>
+        </div>
+        <div class="col-sm-6">
+          <button type="submit" class="btn margin-10 login-button" style="width:100%">Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="container" *ngIf="auth.isLoggedIn()">
+  <div class="blur-box">
+    <h1>Welcome to Book-A-Do: {{details?.name}}</h1>
   </div>
 </div>
