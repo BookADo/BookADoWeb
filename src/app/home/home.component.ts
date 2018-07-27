@@ -20,13 +20,13 @@ export class HomeComponent implements OnInit {
 
   constructor(private auth: AuthenticationService, private router: Router) {
     document.body.className = 'home-container-background';
+    this.checkLoginStatus()
   }
   ngOnDestroy() {
     document.body.className = '';
   }
 
   ngOnInit() {
-    this.checkLoginStatus();
   }
 
   login() {
@@ -39,9 +39,10 @@ export class HomeComponent implements OnInit {
   }
 
   checkLoginStatus(){
-    if (!this.auth.isLoggedIn()) {
+    if (this.auth.isLoggedIn()) {
         this.auth.profile().subscribe (user => {
           this.details = user;
+          console.log(this.details);
         },(err) => {
           console.error(err);
       });

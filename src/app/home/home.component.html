@@ -21,6 +21,6 @@
 </div>
 <div class="container" *ngIf="auth.isLoggedIn()">
   <div class="blur-box">
-    <h1>Welcome to Book-A-Do: {{details?.name}}</h1>
+    <h1>Welcome to Book-A-Do: {{ details?.firstName + " " + details?.lastName }}</h1>
   </div>
 </div>
