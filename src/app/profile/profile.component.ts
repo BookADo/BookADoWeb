@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService, UserDetails } from '../authentication.service';
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -25,10 +26,19 @@ export class ProfileComponent implements OnInit {
     });
     console.log("End on Init");
     this.menuOption = 1;
+    this.jqueryInit();
   }
 
   menuSelect = function(i){
     this.menuOption = i;
+    this.jqueryInit();
+  }
+
+  jqueryInit = function() {
+    $(".nav li").on("click", function(){
+      $(".nav").find(".active").removeClass("active");
+      $(this).addClass("active");
+    });
   }
 
 }

@@ -2,34 +2,34 @@
   height: 200px;
   width: 200px;
   border-radius: 15px;
-  margin: 10px 10px 10px 30px;
+  margin: 10px 10px 10px 25px;
 }
 
 #side-nav {
-  border: 2px solid rgb(229, 238, 252);
+  border: 5px solid white;
   display: table;
-  padding: 0;
   width: 250px;
 }
 
-.nav  {
+.nav {
   border: 2px solid white;
   text-align: center;
 }
 
 .nav li:active,
 .nav li:hover {
-  background: rgb(229, 238, 252);
+  background: lightgrey;
   cursor: pointer;
 }
 
-.nav > .active > a{
-  background: rgb(229, 238, 252);
+.nav > .active{
+  background: white;
+  border: 1px solid lightgrey;
+  font-weight: bold;
 }
 
-
 .main-bar {
-  background: rgb(229, 238, 252);
+  background: white;
   margin-left: -10px;
   margin-top: 10px;
   radius: 10px;
