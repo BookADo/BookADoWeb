@@ -1,4 +1,17 @@
 <div class="container">
-  <h1>Welcome to your profile: {{ details?.firstName }}</h1>
-  <h1>Email: {{details?.email}}</h1>
+  <div class="row">
+    <div class="col-md-3">
+      <img class="prof-pic"
+           src="https://www.maxpixel.net/static/photo/2x/Stylist-Hair-Dryer-Barber-Hair-Hairdresser-Salon-2507843.jpg">
+      <div class="btn-group-vertical">
+        <button id="prof-options" class="btn btn-primary">Profile</button>
+        <button id="prof-options" class="btn btn-danger">Appointments</button>
+        <button id="prof-options" class="btn btn-primary">Messages</button>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <h3>{{ details?.firstName }}</h3>
+      <h1>Email: {{details?.email}}</h1>
+    </div>
+  </div>
 </div>

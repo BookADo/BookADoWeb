@@ -1,0 +1,13 @@
+.prof-pic{
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#prof-options {
+  width: 157%;
+  radius: 10px;
+  border: 3px solid white;
+}
