@@ -16,6 +16,11 @@
   text-align: center;
 }
 
+.nav li{
+  padding-top: 10px;
+  height: 50px;
+}
+
 .nav li:active,
 .nav li:hover {
   background: lightgrey;
