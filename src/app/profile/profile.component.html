@@ -1,17 +1,20 @@
-<div class="container">
+<div class="container profile">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 side-bar">
       <img class="prof-pic"
            src="https://www.maxpixel.net/static/photo/2x/Stylist-Hair-Dryer-Barber-Hair-Hairdresser-Salon-2507843.jpg">
-      <div class="btn-group-vertical">
-        <button id="prof-options" class="btn btn-primary">Profile</button>
-        <button id="prof-options" class="btn btn-danger">Appointments</button>
-        <button id="prof-options" class="btn btn-primary">Messages</button>
-      </div>
+      <ul id="side-nav" class="nav">
+        <li class="" (click)="menuSelect(1)"><i class="far fa-chart-bar"></i><a> Overview</a></li>
+        <li class="" (click)="menuSelect(2)"><i class="far fa-calendar-alt"></i><a> Appointments</a></li>
+        <li class="" (click)="menuSelect(3)"><i class="fas fa-envelope"></i><a> Messages</a></li>
+      </ul>
     </div>
-    <div class="col-md-9">
-      <h3>{{ details?.firstName }}</h3>
-      <h1>Email: {{details?.email}}</h1>
+    <div class="col-md-9 main-bar">
+      <p>{{ details?.firstName }}</p>
+      <p>Email: {{details?.email}}</p>
+      <div *ngIf="menuOption===1"><app-overview></app-overview></div>
+      <div *ngIf="menuOption===2"><app-appointments></app-appointments></div>
+      <div *ngIf="menuOption===3"><app-messages></app-messages></div>
     </div>
   </div>
 </div>

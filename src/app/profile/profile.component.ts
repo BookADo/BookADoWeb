@@ -11,6 +11,7 @@ import { AuthenticationService, UserDetails } from '../authentication.service';
 export class ProfileComponent implements OnInit {
 
   details: UserDetails;
+  menuOption: number;
 
   constructor(private http: HttpClient, private auth: AuthenticationService) {
   }
@@ -23,5 +24,11 @@ export class ProfileComponent implements OnInit {
       console.error(err);
     });
     console.log("End on Init");
+    this.menuOption = 1;
   }
+
+  menuSelect = function(i){
+    this.menuOption = i;
+  }
+
 }

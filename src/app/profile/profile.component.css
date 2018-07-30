@@ -2,12 +2,35 @@
   height: 200px;
   width: 200px;
   border-radius: 15px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin: 10px 10px 10px 30px;
 }
 
-#prof-options {
-  width: 157%;
+#side-nav {
+  border: 2px solid rgb(229, 238, 252);
+  display: table;
+  padding: 0;
+  width: 250px;
+}
+
+.nav  {
+  border: 2px solid white;
+  text-align: center;
+}
+
+.nav li:active,
+.nav li:hover {
+  background: rgb(229, 238, 252);
+  cursor: pointer;
+}
+
+.nav > .active > a{
+  background: rgb(229, 238, 252);
+}
+
+
+.main-bar {
+  background: rgb(229, 238, 252);
+  margin-left: -10px;
+  margin-top: 10px;
   radius: 10px;
-  border: 3px solid white;
 }

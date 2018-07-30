@@ -14,6 +14,9 @@ import { ProfileComponent } from './profile/profile.component';
 //services
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
+import { OverviewComponent } from './profile/overview/overview.component';
+import { AppointmentsComponent } from './profile/appointments/appointments.component';
+import { MessagesComponent } from './profile/messages/messages.component';
 
 
 const appRoutes: Routes = [
@@ -53,7 +56,10 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    OverviewComponent,
+    AppointmentsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
