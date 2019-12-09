@@ -13,5 +13,4 @@ RUN npm install -g @angular/cli@6.0.8
 # add app
 COPY . .
 
-RUN PWD
 CMD [ "npm", "start" ]
