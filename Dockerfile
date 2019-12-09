@@ -1,9 +1,16 @@
 FROM node:latest
 
-DEV_MODE=true
+WORKDIR /opt
 
-RUN npm install
-RUN npm cache clean && rm -rf ~/.npm
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /opt/app-root/src/node_modules/.bin:$PATH
 
-WORKDIR /opt/
+# install and cache app dependencies
+COPY package.json /app/package.json
+RUN npn install
+RUN npm install -g @angular/cli@6.0.8
+
+# add app
+COPY . /opt
+
 RUN ng start
