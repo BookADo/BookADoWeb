@@ -13,4 +13,5 @@ RUN npm install -g @angular/cli@6.0.8
 # add app
 COPY . /opt
 
+RUN PWD
 RUN ng start
