@@ -1,17 +1,17 @@
 FROM node:latest
 
-WORKDIR /opt
+WORKDIR /BookADoWeb
 
 # add `/app/node_modules/.bin` to $PATH
-ENV PATH /opt/app-root/src/node_modules/.bin:$PATH
+ENV PATH /BookADoWeb/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-COPY package.json /app/package.json
-RUN npn install
+COPY package.json /BookADoWeb/package.json
+RUN npm install
 RUN npm install -g @angular/cli@6.0.8
 
 # add app
-COPY . /opt
+COPY . /BookADoWeb
 
 RUN PWD
-RUN ng start
+RUN npm start
