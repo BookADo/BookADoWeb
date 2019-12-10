@@ -60,5 +60,9 @@ if (app.get('env') === 'development') {
   });
 }
 
+app.listen(80, function () {
+  console.log('Server listening on port 8080...');
+});
+
 
 module.exports = app;
