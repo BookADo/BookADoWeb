@@ -2,8 +2,7 @@ FROM node:latest
 
 EXPOSE 80
 
-RUN mkdir -p /opt/app-root/
-WORKDIR /opt/app-root
+WORKDIR /opt
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /opt/app-root/src/node_modules/.bin:$PATH
