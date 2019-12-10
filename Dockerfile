@@ -14,7 +14,7 @@ RUN npm install
 RUN npm install -g @angular/cli@6.0.8
 
 # add app
-COPY src /opt/app-root
+COPY . .
 
 
 CMD [ "npm", "start" ]
