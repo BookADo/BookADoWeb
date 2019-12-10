@@ -9,7 +9,7 @@ WORKDIR /opt/app-root
 ENV PATH /opt/app-root/src/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-COPY COPY package.json /opt/app-root
+COPY package.json /opt/app-root
 
 RUN npm install
 RUN npm install -g @angular/cli@6.0.8
