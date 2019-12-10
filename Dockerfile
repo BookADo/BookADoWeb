@@ -13,5 +13,6 @@ RUN npm install -g @angular/cli@6.0.8
 # add app
 COPY . .
 
-EXPOSE 8080
+EXPOSE 80
+
 CMD [ "npm", "start" ]
