@@ -10,11 +10,11 @@ ENV PATH /opt/app-root/src/node_modules/.bin:$PATH
 # install and cache app dependencies
 COPY package.json .
 
-RUN npm install
-RUN npm install -g @angular/cli@6.0.8
+RUN yarn install
+RUN yarn global add @angular/cli@6.0.8
 
 # add app
 COPY . .
 
 
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]

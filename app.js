@@ -60,7 +60,11 @@ if (app.get('env') === 'development') {
   });
 }
 
+<<<<<<< HEAD
 app.listen(80, function () {
+=======
+app.listen(8080, function () {
+>>>>>>> df1e9bdc81e66b47a11e6c14c0238104165c9f86
   console.log('Server listening on port 80...');
 });
 
