@@ -1,10 +1,11 @@
 FROM node:latest
 
-EXPOSE 80
+EXPOSE 8080
 
 RUN mkdir -p /opt
 RUN chgrp -R 0 /opt && chmod -R g=u /opt
 WORKDIR /opt
+
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /opt/app-root/src/node_modules/.bin:$PATH
