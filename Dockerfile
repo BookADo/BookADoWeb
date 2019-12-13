@@ -2,8 +2,7 @@ FROM node:latest
 
 EXPOSE 80
 
-RUN mkdir -p /opt
-RUN chown -R 0 1001 /opt
+RUN mkdir -p /opt/dist
 WORKDIR /opt
 
 # add `/app/node_modules/.bin` to $PATH
