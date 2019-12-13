@@ -2,7 +2,8 @@ FROM node:latest
 
 EXPOSE 80
 
-RUN mkdir -p /opt/dist
+RUN mkdir -p /opt
+# RUN chgrp -R 0 /opt && chmod -R g=u /opt
 WORKDIR /opt
 
 # add `/app/node_modules/.bin` to $PATH
@@ -12,7 +13,7 @@ ENV PATH /opt/app-root/src/node_modules/.bin:$PATH
 COPY package.json .
 
 RUN yarn install
-RUN yarn global add @angular/cli@6.0.8
+# RUN yarn global add @angular/cli@6.0.8
 
 # add app
 COPY . .
