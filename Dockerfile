@@ -7,7 +7,7 @@ RUN useradd user
 RUN mkdir -p /opt
 WORKDIR /opt
 
-RUN chgrp -R user:user /opt && chmod 755 /opt
+RUN chown -R user:user /opt && chmod 755 /opt
 
 USER user
 
