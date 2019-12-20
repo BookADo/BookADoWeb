@@ -4,9 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng build && node ./bin/www",
+    "start:dev": "ng build --prod false && node ./bin/www",
     "build": "ng build",
+    "serve": "ng serve",
+    "build:dev": "ng build --prod false",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint fix",
     "e2e": "ng e2e"
   },
   "private": true,
