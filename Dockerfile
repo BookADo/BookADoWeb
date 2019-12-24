@@ -2,7 +2,7 @@ FROM node:latest
 
 EXPOSE 8080
 
-#RUN useradd -ms /bin/bash nodeuser
+RUN useradd -ms /bin/bash nodeuser
 
 USER nodeuser
 
