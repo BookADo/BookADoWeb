@@ -2,15 +2,15 @@ FROM node:latest
 
 EXPOSE 8080
 
-#RUN useradd -ms /bin/bash node
+#RUN useradd -ms /bin/bash nodeuser
 
-USER node
+USER nodeuser
 
 RUN echo $(id)
 
 RUN mkdir -p /opt
 
-RUN chown -R node: /opt && chmod -R 755 /opt
+RUN chown -R nodeuser /opt && chmod -R 755 /opt
 ##RUN chgrp -R 0 /opt && chmod -R g=u /opt
 
 WORKDIR /opt
