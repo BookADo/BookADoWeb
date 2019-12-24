@@ -2,15 +2,14 @@ FROM node:latest
 
 EXPOSE 8080
 
-RUN useradd user
+RUN useradd -ms /bin/bash user1
 
 RUN mkdir -p /opt
-RUN mkdir -p /opt/dist
+
+RUN chown -R user1:userGroup /opt && chmod 775 /opt
+
+USER user1
 WORKDIR /opt
-
-RUN chown -R user:user /opt && chmod 755 /opt && chmod 755 /opt/dist
-
-USER user
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /opt/app-root/src/node_modules/.bin:$PATH
