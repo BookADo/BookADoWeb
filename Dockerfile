@@ -5,9 +5,10 @@ EXPOSE 8080
 RUN useradd user
 
 RUN mkdir -p /opt
+RUN mkdir -p /opt/dist
 WORKDIR /opt
 
-RUN chown -R user:user /opt && chmod 755 /opt
+RUN chown -R user:user /opt && chmod 755 /opt && chmod 755 /opt/dist
 
 USER user
 
