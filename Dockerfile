@@ -6,7 +6,7 @@ RUN useradd -ms /bin/bash user1
 
 RUN mkdir -p /opt
 
-RUN chown -R user1:userGroup /opt && chmod 775 /opt
+RUN chown -R user1:userGroup /opt && chmod -R 775 /opt
 
 USER user1
 WORKDIR /opt
